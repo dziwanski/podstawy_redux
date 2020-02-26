@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {createStore, combineReducers} from "redux";
+import {createStore, combineReducers, bindActionCreators} from "redux";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
@@ -53,6 +53,18 @@ const allReducers = combineReducers({movies, actors});
 
 const store = createStore(allReducers, composeWithDevTools());
 window.store = store;
+
+const addActor = actor => ({type: 'ADD_ACTOR', item: actor});
+const resetActors = () => ({type: 'RESET_ACTORS'});
+
+store.dispatch(addActor('Cezary pazura'));
+
+// Bind action creators to one object.
+const actorActions = bindActionCreators({add: addActor, reset: resetActors}, store.dispatch);
+
+actorActions.add('Ja');
+actorActions.reset();
+
 
 
 function App() {
