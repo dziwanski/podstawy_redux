@@ -3,6 +3,7 @@ import './App.css';
 import MoviesContainer from "./app/movies/components/MoviesContainer";
 import MoviesForm from "./app/movies/components/MoviesForm";
 import ActorsContainer from "./app/actors/components/ActorsContainer";
+import ActorsForm from "./app/actors/components/ActorsForm";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             </div>
             <div>
                 <ActorsContainer />
+                <ActorsForm/>
             </div>
         </div>
     );
