@@ -8,6 +8,7 @@ const MoviesForm = (props) => {
 
     const addMovie = (event) => {
         event.preventDefault();
+        // Wlasciwosc add jest definiowana w mapDispatchToProps
         props.add(movieInput.current.value);
     };
 
@@ -17,6 +18,7 @@ const MoviesForm = (props) => {
     </form>
 };
 
+// actions.add jest to akcja z actions.js. Jest to jedyny element sluzacy do dodawania elementow do store.
 const mapDispatchToProps = dispatch => ({
     add: movie => dispatch(actions.add(movie))
 });
